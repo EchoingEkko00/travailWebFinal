@@ -1,0 +1,94 @@
+<div class="container">
+    <h2>User Settings</h2>
+    <form [formGroup]="updateUserForm">
+        <div *ngIf="validMessage != ''">
+            <h3 class="has-info">{{validMessage}}</h3>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" class="form-control" [(ngModel)]="user.name" required/>
+            
+            <div *ngIf="!form.name.valid && (form.name.dirty || form.name.touched)">
+                <div [hidden]="!form.name.errors.required">Le nom est obliger</div>
+                <div [hidden]="!form.name.errors.minlength">Le nom doit avoir 2 characteres ou plus</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control" [(ngModel)]="user.password" required/>
+
+            <div *ngIf="!form.password.valid && (form.password.dirty || form.password.touched)">
+                <div [hidden]="!form.password.errors.required">Le mot de passe est obliger</div>
+                <div [hidden]="!form.password.errors.minlength">Le mot de passe doit avoir 6 characteres ou plus</div>
+            </div>
+        </div>
+
+        <div class="form-check form-group">
+            <input class="form-check-input" type="checkbox" id="emailOffers" formControlName="emailOffers" [(ngModel)]="user.emailOffers"/>
+            <label class="form-check-label" for="emailOffers">
+                Email Special Offers
+            </label>
+        </div>
+
+        <p>User Interface Style</p>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="interfaceStyle" id="lightInterface" value="light"
+                [(ngModel)]="user.interfaceStyle" checked/>
+                <label class="form-check-label" for="lightInterface">
+                    Light
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="interfaceStyle" id="mediumInterface" value="medium" [(ngModel)]="user.interfaceStyle"/>
+                <label class="form-check-label" for="mediumInterface">
+                    Medium
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="interfaceStyle" id="darkInterface" value="dark" [(ngModel)]="user.interfaceStyle"/>
+                <label class="form-check-label" for="darkInterface">
+                    Dark
+                </label>
+            </div>
+
+            <div *ngIf="!form.interfaceStyle.valid">
+                <div [hidden]="!form.interfaceStyle.errors.required">Une interface doit etre choisi</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="subscriptionType">Subscription Type</label>
+            <select class="form-control" id="subscriptionType" formControlName="subscriptionType" [(ngModel)]="user.subscriptionType" required>
+                <option>Monthly</option>
+                <option>Annual</option>
+                <option>Lifetime</option>
+            </select>
+
+            <div *ngIf="!form.subscriptionType.valid && (form.interfaceStyle.dirty || form.subscriptionType.touched)">
+                <div [hidden]="!form.subscriptionType.errors.required">Un abonnement doit etre choisi</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" formControlName="notes" class="form-control" rows="3" [(ngModel)]="user.notes"></textarea>
+        </div>
+
+        <div class="form-group">
+
+            <label class="col-md-4 control-label" for="submit"></label>
+
+            <div class="col-md-8">
+
+                <button (click)="updateUser()" id="submit" name="submit" class="btn btn-primary">Update</button>
+
+                <a routerLink="/crud" id="cancel" name="cancel" class="btn btn-secondary">Cancel</a>
+
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,82 @@
+<div class="container">
+    <h2>User Settings</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="validMessage != ''">
+            <h3 class="has-info">{{validMessage}}</h3>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" class="form-control" ngModel required/>
+            
+            <div *ngIf="!form2.name.valid && (form2.name.dirty || form2.name.touched)">
+                <div [hidden]="!form2.name.errors.required">Le nom est obliger</div>
+                <div [hidden]="!form2.name.errors.minlength">Le nom doit avoir 2 characteres ou plus</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control" ngModel required/>
+
+            <div *ngIf="!form2.password.valid && (form2.password.dirty || form2.password.touched)">
+                <div [hidden]="!form2.password.errors.required">Le mot de passe est obliger</div>
+                <div [hidden]="!form2.password.errors.minlength">Le mot de passe doit avoir 6 characteres ou plus</div>
+            </div>
+        </div>
+
+        <div class="form-check form-group">
+            <input class="form-check-input" type="checkbox" id="emailOffers" formControlName="emailOffers" ngModel/>
+            <label class="form-check-label" for="emailOffers">
+                Email Special Offers
+            </label>
+        </div>
+
+        <p>User Interface Style</p>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="interfaceStyle" id="lightInterface" value="light"
+                ngModel checked/>
+                <label class="form-check-label" for="lightInterface">
+                    Light
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="interfaceStyle" id="mediumInterface" value="medium"/>
+                <label class="form-check-label" for="mediumInterface">
+                    Medium
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" formControlName="interfaceStyle" id="darkInterface" value="dark"/>
+                <label class="form-check-label" for="darkInterface">
+                    Dark
+                </label>
+            </div>
+
+            <div *ngIf="!form2.interfaceStyle.valid">
+                <div [hidden]="!form2.interfaceStyle.errors.required">Une interface doit etre choisi</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="subscriptionType">Subscription Type</label>
+            <select class="form-control" id="subscriptionType" formControlName="subscriptionType" ngModel required>
+                <option>Monthly</option>
+                <option>Annual</option>
+                <option>Lifetime</option>
+            </select>
+
+            <div *ngIf="!form2.subscriptionType.valid && (form2.interfaceStyle.dirty || form2.subscriptionType.touched)">
+                <div [hidden]="!form2.subscriptionType.errors.required">Un abonnement doit etre choisi</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" formControlName="notes" class="form-control" rows="3" ngModel></textarea>
+        </div>
+
+        <button class="btn btn-primary">Send</button>
+    </form>
+</div>

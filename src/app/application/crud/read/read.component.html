@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <h2>CRUD - READ - One</h2>
+    <div class="container-fluid text-center">
+        <h1>{{user.id}}</h1>
+        <h1>{{user.name}}</h1>
+        <ng-container *ngIf="user.emailOffers==true; else elseTemplate">
+            <h1>Les email offert sont selectionner</h1>
+        </ng-container>
+        <ng-template #elseTemplate><
+            <h1>Le email offert ne sont pas selectionner</h1>
+        </ng-template>
+        <h1>{{user.subscriptionType}}</h1>
+        <div class="row text-center">
+            <div class="col">
+                <h1>Notes :</h1>
+            </div>
+            <div class="col">
+                <h1>{{user.notes}}</h1>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,173 @@
+<ng-container [ngSwitch]="tutorialLinkId">
+    <ng-container *ngSwitchCase="1">
+        <div class="container-fluid">
+            <h1>Mini tuto sur angular</h1>
+            <div class="row">
+                <div class="col">
+                    <h3>Qu'es qu'est Angular</h3>
+                    <p>Développé par Google, Angular est un Framework open source écrit en JavaScript qui permet la
+                        création d’applications Web et plus particulièrement de ce qu’on appelle des « Single Page
+                        Applications » : des applications web accessibles via une page web unique qui permet de
+                        fluidifier l’expérience utilisateur et d’éviter les chargements de pages à chaque nouvelle
+                        action. Le Framework est basé sur une architecture du type MVC et permet donc de séparer les
+                        données, le visuel et les actions pour une meilleure gestion des responsabilités. Un type
+                        d’architecture qui a largement fait ses preuves et qui permet une forte maintenabilité et une
+                        amélioration du travail collaboratif.</p>
+                </div>
+                <div class="col">
+                    <h3>Utilite de Angular</h3>
+                    <p>Angular est un Framework solide, complet et homogène qui a l’avantage de ne pas nécessiter
+                        l’ajout de composants extérieurs pour son fonctionnement. Il est possible de faire nativement du
+                        routing, de l’AJAX ou encore du stockage en local contrairement à vue.js ou encore React qui
+                        reste au final une librairie destinée à développer des composants.</p>
+                </div>
+                <div class="col">
+                    <h3>Historique </h3>
+                    <p>Depuis 2010 jusqu’à aujourd’hui, Google a sorti différentes versions stables d’Angular:
+                        Angular.Js en Octobre 2010
+                        Angular 2 en Septembre 2016
+                        Angular 4 en Mars 2017
+                        Angular 5 en Novembre 2017
+                        Angular 6 en mai 2018
+                        A partir de la version 2, le framework a été complètement reécrit. AngularJS n’est donc pas
+                        compatible avec les versions ultérieures. En revanche, il est tout à fait possible de migrer
+                        entre la version 2 et la version 4, 5 ou 6.
+                        Angular 1 a été pensé en essayant de proposer un framework qui simplifie la vie des développeurs
+                        (injection de dépendances, tests, double data binding, extensibilité….).
+                        Angular 2 voit plus grand et le but est de proposer une véritable plateforme. L’objectif de la
+                        réécriture est de reprendre ce qui a marché dans la première version et d’offrir une solution
+                        plus simple, plus légère, plus universelle, mais aussi plus rapide aux développeurs. Angular 2
+                        se base sur les dernières nouveautés du Web qui débarquent dans nos navigateurs
+                    </p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'deux'">
+        <div class="container-fluid">
+            <h1>Mini tuto relation des classes</h1>
+            <div class="row">
+                <div class="col-4">
+                    <h3>Heritage</h3>
+                    <p>L'héritage est un principe de division par généralisation et spécialisation, représenté par un
+                        trait reliant les deux classes et dont l'extrémité du côté de la classe mère comporte un
+                        triangle.
+                        La classe fille hérite de tous les attributs et méthodes, qu'ils soient publics, protégés ou
+                        privés. Cependant, elle ne peut pas utiliser directement les attributs et méthodes privés (que
+                        ce soit en lecture ou en écriture), sauf par l'intermédiaire d'une méthode héritée (publique ou
+                        protégée).
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3>Association</h3>
+                    <p>L'association est une connexion sémantique entre deux classes (relation logique). Une association
+                        peut être nommée. L'invocation d'une méthode est une association. Elle peut être binaire, dans
+                        ce cas elle est représentée par un simple trait, ou n-aire, les classes sont reliées à un
+                        losange par des traits simples. Ces relations peuvent être nommées. L'association n'est utilisée
+                        que dans les diagrammes de classe.
+
+                        multiplicité : comparable aux cardinalités du système Merise, sert à compter le nombre minimum
+                        et maximum d'instances de chaque classe dans la relation liant 2 ou plusieurs classes.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3>Agrégation</h3>
+                    <p>L'agrégation est une association avec relation de subordination, représentée par un trait reliant
+                        les deux classes et dont l'origine se distingue de l'autre extrémité (la classe subordonnée) par
+                        un losange vide. Une des classes regroupe d'autres classes. L'objet T utilise une instance de la
+                        classe T'.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3>Composition</h3>
+                    <p>La composition est une agrégation avec cycle de vie dépendant : la classe composée est détruite
+                        lorsque la classe mère disparait. L'origine de cette association est représentée par un losange
+                        plein.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3>Dépendance</h3>
+                    <p>Implique qu'une ou plusieurs méthodes reçoivent un objet d'un type d'une autre classe. Il n'y a
+                        pas de liaison en ce qui concerne la destruction d'objets mais une dépendance est quand même là.
+                        Elle est symbolisée par une flèche en pointillés, dont son extrémité possède trois traits qui se
+                        coupent en un même point.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="3">
+        <div class="container-fluid">
+            <h1>Mini tuto CRUD</h1>
+            <div class="row text-center">
+                <div class="col-2 mx-auto">
+                    <h3>Information general</h3>
+                    <p>L'acronyme informatique anglais CRUD (pour create, read, update, delete) (parfois appelé SCRUD
+                        avec un "S" pour search) désigne les quatre opérations de base pour la persistance des données,
+                        en particulier le stockage d'informations en base de données.
+                    </p>
+                    <p>create : créer</p>
+                    <p>read : lire</p>
+                    <p>update : mettre à jour</p>
+                    <p>delete : supprimer</p>
+                </div>
+                <div class="col-2 mx-auto">
+                    <h3>Example</h3>
+                    <p>Par exemple, une application carnet d'adresse dont l'élément le plus simple est un contact, doit
+                        permettre à l'utilisateur de :
+
+                        Créer des contacts
+                        Lire un contact (liste, zone de recherche…)
+                        Mettre à jour un contact
+                        Supprimer un contact
+                        Si l'une ou l'autre de ces opérations fondamentales manque, le logiciel sera considéré comme
+                        incomplet.</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="4">
+        <div class="container-fluid">
+            <h1>Mini tuto sur le REST API</h1>
+            <div class="row mx-auto">
+                <h3>Information sur le REST</h3>
+                <p>REST est un style d'architecture logicielle définissant un
+                    ensemble de contraintes à utiliser pour créer des services web. Les services web conformes au
+                    style d'architecture REST, aussi appelés services web RESTful, établissent une interopérabilité
+                    entre les ordinateurs sur Internet. Les services web REST permettent aux systèmes effectuant des
+                    requêtes de manipuler des ressources web via leurs représentations textuelles à travers un
+                    ensemble d'opérations uniformes et prédéfinies sans état. D'autres types de services web tels
+                    que les services web SOAP exposent leurs propres ensembles d'opérations arbitraires1.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-3 mx-auto">
+                    <h3>SOAP</h3>
+                    <p>Simple Object Access Protocol</p>
+                </div>
+                <div class="col-3 mx-auto">
+                    <h3>REST</h3>
+                    <p>Representational State Transfer</p>
+                </div>
+                <div class="col-3 mx-auto">
+                    <h3>API</h3>
+                    <p> Application Programming Interface, est la partie du programme qu’on expose officiellement au
+                        monde extérieur pour manipuler celui-ci.</p>
+                </div>
+                <div class="col-3 mx-auto">
+                    <h3>REST API</h3>
+                    <p>Une API REST se doit d’être sans état stateless . La communication entre le client et le serveur
+                        ne doit pas dépendre d’un quelconque contexte provenant du serveur. Ainsi, chaque requête doit
+                        contenir l’ensemble des informations nécessaires à son traitement. Cela permet au de traiter
+                        indifféremment les requêtes de plusieurs clients via de multiples instances de serveurs.</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <div class="container-fluid">
+            <h1>Desoler mini tuto non-disponible encore...</h1>
+            <p>Revenez plus tard pour voir</p>
+        </div>
+    </ng-container>
+</ng-container>

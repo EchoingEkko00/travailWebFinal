@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h2>Pour toute informations vous pouvez nous contact ci-dessous!</h2>
+  <form action="mailto:volteczx8@gmail.com" method="post" enctype="text/plain">
+    <div class="row">
+      <div class="col form-group">
+        <label for="nom" class="form-label">Votre nom</label>
+        <input type="text" class="form-control" id="nom" placeholder="Entre votre nom">
+      </div>
+      <div class="col form-group">
+        <label for="nomFamille" class="form-label">Votre nom de famille</label>
+        <input type="text" class="form-control" id="nomFamille" placeholder="Entre votre nom de Famille">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="message" class="form-label">Example textarea</label>
+      <textarea class="form-control" id="message" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+    <button type="reset" class="btn btn-danger mx-auto">Reset</button>
+  </form>
+  <div class="text-center">
+    <a [routerLink]="[ '/home']" class="badge badge-secondary">Retour a la page de depart</a>
+  </div>
+</div>

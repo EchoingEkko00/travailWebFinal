@@ -1,0 +1,11 @@
+.navbar {
+    background-image: linear-gradient(120deg, #8103ff, black); 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+button {
+    background-color: rgb(255, 238, 0);
+}
