@@ -8,6 +8,15 @@
       "subscriptionType": "Annual",
       "notes": "asdasdada",
       "id": 1
+    },
+    {
+      "name": "asd",
+      "password": "asdadsadsad",
+      "emailOffers": true,
+      "interfaceStyle": "light",
+      "subscriptionType": "Lifetime",
+      "notes": "",
+      "id": 2
     }
   ]
 }
